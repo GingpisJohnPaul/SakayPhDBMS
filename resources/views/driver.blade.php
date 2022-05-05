@@ -36,7 +36,7 @@
                     </thead>
 
                     <tbody>
-                        @for ($i = 0; $i < 5; $i++)
+                        @for ($i = 1; $i < 6; $i++)
                             <tr>
                                 <td data-label="ID"> <span>{{ $i }}</span> </td>
                                 <td data-label="Name">
@@ -58,6 +58,8 @@
 
     </div>
 </div>
+<br>
+<br>
     <div class="p-10 bg-surface-secondary">
     <div class="container">
         <div class="card">
@@ -82,7 +84,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < 5; $i++)
+                        @for ($i = 1; $i < 6; $i++)
                             <tr>
                                 <td data-label="ID"> <span>{{ $i }}</span> </td>
                                 <td data-label="Origin">
