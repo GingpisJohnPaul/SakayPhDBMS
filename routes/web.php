@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\DriverController;
 
@@ -16,9 +19,10 @@ use App\Http\Controllers\DriverController;
 */
 
 Route::get('/', function () {
-    return view('passenger');
+    return view('/home');
 });
-
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 Route::get('/passenger', [PassengerController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
 
