@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\TripsController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +26,16 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/passenger', [PassengerController::class, 'index']);
-Route::get('/driver', [DriverController::class, 'index']);
-Route::get('/driver', App\Http\Controllers\DriverController::class);
+// Route::get('/driver', [DriverController::class, 'index']);
+// Route::get('/driver', [TripsController::class, 'index']);
+
+// Route::get('/driver', function(){
+//     $data = DB::table('users')
+//         ->join('posts', 'users.id', '=', 'posts.user_id')
+//         ->select('users.*', 'posts.title')
+//         ->get();
+//     dd($data);
+// });
 
 // Route::prefix('admin')->group(function(){
 //     Route::post('/share-post/{id}', [ App\Http\Controllers\Admin\PostController::class, 'sharePost']);
@@ -34,6 +44,10 @@ Route::get('/driver', App\Http\Controllers\DriverController::class);
 
 
 // Route::resource('/driver', App\Http\Controllers\Admin\PostController::class);
+
+// Route::resource('trips', TripsController::class);
+// Route::resource('driver', DriverController::class);
+Route::resource('/passenger', App\Http\Controllers\PassengerController::class);
 
 Auth::routes();
 

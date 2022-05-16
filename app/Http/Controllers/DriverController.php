@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Driver;
+use App\Models\Trips;
 
 class DriverController extends Controller
 {
     public function index() {
-        $driver = Driver::all();
-        return view('driver')->with('driver', $driver);
+        $driver = Trips::all();
+        return view('driver')->with('trips', $driver);
+
+        // $trips = Trips::all();
+        // return view('driver')->with('driver', $trips);
     }
 
 
@@ -20,6 +24,6 @@ class DriverController extends Controller
         $account = Driver::find($driver_id);
         $account->delete();
 
-        return redirect('/driver');
+        return redirect('driver');
     }
 }

@@ -39,7 +39,7 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($driver as $item)
+                        @foreach ($trips as $item)
                         <tr>
                             <td>{{$item->driver_id}}</td>
                             <td>{{$item->driver_name}}</td>
@@ -77,7 +77,7 @@
                 <table class="table table-hover table-nowrap">
                     <thead class="table-light">
                         <tr>
-                            <th scope="col">ID</th>
+                            <th scope="col">Driver</th>
                             <th scope="col">Origin</th>
                             <th scope="col">Destination</th>
                             <th scope="col">Number of Passenger</th>
@@ -89,21 +89,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 1; $i < 6; $i++)
+                        @foreach ($trips as $trip)
                             <tr>
-                                <td data-label="ID"> <span>{{ $i }}</span> </td>
-                                <td data-label="Origin">
-                                <a class="text-heading font-semibold" href="#">Sta.Rita</a> </td>
-                                <td data-label="Destination"> <span>SM Central</span> </td>
-                                <td data-label="Number of Passenger"> <span>5</span> </td>
-                                <td data-label="Line Code"> <span>SM</span> </td> 
-                                <td data-label="Is Archived?">  <span>No</span> </td> 
-                                <td data-label="Action">
-                                    <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                <td>{{$trip->driver_id}}</td>
+                                <td>{{$trip->trips_origin}}</td>
+                                <td>{{$trip->trips_destination}}</td>
+                                <td>{{$trip->trips_passenger}}</td>
+                                <td>{{$trip->trips_bodynum}}</td>
+                                <td>{{$trip->trips_isArchived}}</td>
+
+                                <td>
+                                    <form method="POST" action="/driver/{{$trip->driver_id}}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
-                        @endfor
+                        @endforeach
                     </tbody>
                 </table>
             </div>

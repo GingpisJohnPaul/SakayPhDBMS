@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\Trips;
 
-class PassengerController extends Controller
+class TripsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PassengerController extends Controller
      */
     public function index()
     {
-        $passenger = Users::all();
-        return view('passenger')->with('passenger', $passenger);
+        $trips = Trips::all();
+        return view('driver')->with('trips', $trips);
     }
 
     /**
@@ -81,8 +81,6 @@ class PassengerController extends Controller
      */
     public function destroy($id)
     {
-        $account = Users::find($id);
-        $account->delete();
-        return redirect('/passenger');
+        //
     }
 }
