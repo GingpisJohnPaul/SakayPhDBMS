@@ -25,9 +25,15 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/passenger', [PassengerController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
+Route::get('/driver', App\Http\Controllers\DriverController::class);
+
+// Route::prefix('admin')->group(function(){
+//     Route::post('/share-post/{id}', [ App\Http\Controllers\Admin\PostController::class, 'sharePost']);
+//     Route::resource('/driver', App\Http\Controllers\Admin\PostController::class);
+// });
 
 
-
+// Route::resource('/driver', App\Http\Controllers\Admin\PostController::class);
 
 Auth::routes();
 
