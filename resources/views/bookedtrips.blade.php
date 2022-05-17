@@ -42,6 +42,7 @@
                             
 
                             <tr>
+                            @foreach ($bookedtrips as $bookedtrip)
                                 <td>{{$bookedtrip->reserve_id}}</td>
                                 <td>{{$bookedtrip->reserve_current}}</td>
                                 <td>{{$bookedtrip->reserve_destination}}</td>

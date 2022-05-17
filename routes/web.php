@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\TripsController;
+use App\Http\Controllers\BookedTripsController;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -28,7 +29,7 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::get('/passenger', [PassengerController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/trips', [TripsController::class, 'index']);
-Route::get('/boookedtrips', [BookedTripsController::class, 'index']);
+Route::get('/bookedtrips', [BookedTripsController::class, 'index']);
 // Route::get('/driver', [TripsController::class, 'index']);
 
 // Route::get('/driver', function(){
