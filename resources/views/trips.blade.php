@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h6>Driver</h6>
+                <h6>Driver Trips</h6>
                 </div>
                 <div>
                 <div class="mx-auto pull-right">

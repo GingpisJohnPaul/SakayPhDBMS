@@ -29,6 +29,14 @@
             <li class="nav-item">
               <a class="nav-link" href="/driver">Driver</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/bookedtrips">BookedTrips</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/trips">Trips</a>
+            </li>
             
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
