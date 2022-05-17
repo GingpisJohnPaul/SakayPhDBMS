@@ -49,6 +49,7 @@ Route::get('/passenger', [PassengerController::class, 'index']);
 // Route::resource('driver', DriverController::class);
 Route::resource('/passenger', App\Http\Controllers\PassengerController::class);
 
+
 Auth::routes();
 
 
