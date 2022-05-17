@@ -26,7 +26,9 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/passenger', [PassengerController::class, 'index']);
-// Route::get('/driver', [DriverController::class, 'index']);
+Route::get('/driver', [DriverController::class, 'index']);
+Route::get('/trips', [TripsController::class, 'index']);
+Route::get('/boookedtrips', [BookedTripsController::class, 'index']);
 // Route::get('/driver', [TripsController::class, 'index']);
 
 // Route::get('/driver', function(){

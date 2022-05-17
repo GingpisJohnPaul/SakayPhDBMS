@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Trips;
+use App\Models\BookedTrips;
 
-class TripsController extends Controller
+class BookedTripsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TripsController extends Controller
      */
     public function index()
     {
-        $trips = Trips::all();
-        return view('trips')->with('trips', $trips);
+        $bookedtrips = BookedTrips::all();
+        return view('bookedtrips')->with('bookedtrips', $bookedtrips);
     }
 
     /**
