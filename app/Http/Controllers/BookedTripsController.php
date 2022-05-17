@@ -36,7 +36,19 @@ class BookedTripsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bookedtrip = new BookedTrips;
+
+        $bookedtrip->trips_id = $request->trip;
+        $bookedtrip->users_id = $request->user;
+        $bookedtrip->reserve_current = $request->current;
+        $bookedtrip->reserve_destination = $request->destination;
+        $bookedtrip->reserve_description = $request->description;
+        $bookedtrip->reserve_status = $request->status;
+
+        $bookedtrip->save();
+
+        $bookedtrips = BookedTrips::all();
+        return view('bookedtrips')->with('bookedtrips', $bookedtrips);
     }
 
     /**
@@ -70,7 +82,17 @@ class BookedTripsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updatedTrip = BookedTrips::find($id);
+        $updatedTrip->trips_id = $request->trip;
+        $updatedTrip->users_id = $request->user;
+        $updatedTrip->reserve_current = $request->current;
+        $updatedTrip->reserve_destination = $request->destination;
+        $updatedTrip->reserve_description = $request->description;
+        $updatedTrip->reserve_status = $request->status;
+        $updatedTrip->fill($request->all());
+        $updatedTrip->save();
+
+        return redirect('bookedtrips');
     }
 
     /**
@@ -81,6 +103,9 @@ class BookedTripsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $account = BookedTrips::find($id);
+        $account->delete();
+
+        return redirect('bookedtrips');
     }
 }
