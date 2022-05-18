@@ -11,15 +11,14 @@
                     <div class="mx-auto pull-right">
                         <div class="">
                             <div class="input-group">
-                            <button class="btn btn-info" type="submit" title="Search">
-                            </button>
-                            </span>
-                    <input type="text" class="form-control" name="search" placeholder="Search">
+                                <form action="/search-passengers" method="get">
+                                    <input type="text" name="search">
+                                    <input type="submit" value="Search">
+                                </form> 
+                            </div>
                         </div>
-                    </form>
                     </div>
-                    </div>
-                    </div>
+                </div>
             <div class="table-responsive">
                 <table class="table table-hover table-nowrap">
                     <thead class="table-light">
@@ -35,16 +34,61 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($passenger as $item)
+                        @foreach ($passengers as $passenger)
                         <tr>
-                            <td>{{$item->users_id}}</td>
-                            <td>{{$item->users_name}}</td>
-                            <td>{{$item->users_uname}}</td>
-                            <td>{{$item->users_contact}}</td>
-                            <td>{{$item->users_address}}</td>
+                            <td>{{$passenger->users_id}}</td>
+                            <td>{{$passenger->users_name}}</td>
+                            <td>{{$passenger->users_uname}}</td>
+                            <td>{{$passenger->users_contact}}</td>
+                            <td>{{$passenger->users_address}}</td>
 
                             <td>
-                                <form method="POST" action="/passenger/{{$item->users_id}}">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$passenger->users_id}}">Edit</button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="{{$passenger->users_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Booked Trip</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <form method="POST" action="/passenger/{{$passenger->users_id}}">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="mb-3">
+                                            <label class="form-label"> Passenger Name </label>
+                                            <input type="text" name="name" value="{{$passenger->users_name}}"class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label"> Username </label>
+                                            <input type="text" name="username" value="{{$passenger->users_uname}}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label"> Contact Number </label>
+                                            <input type="text" name="contact" value="{{$passenger->users_contact}}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label"> Address </label>
+                                            <input type="text" name="address" value="{{$passenger->users_address}}" class="form-control">
+                                        </div>
+                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                    
+                                    </div>
+                                </div>
+                                </div>
+
+                                <form method="POST" action="/passenger/{{$passenger->users_id}}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>

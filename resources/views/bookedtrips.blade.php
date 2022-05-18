@@ -11,9 +11,7 @@
                 <div class="mx-auto pull-right">
                     <div class="">
                         <div class="input-group">
-                        <form action="/search" method="get">
-                            <!-- <input type="text" class="form-control" name="search" id="search" placeholder="Search for a record">
-                            <button class="btn btn-info" type="submit" title="Search projects">Search</button> -->
+                        <form action="/search-bookedtrips" method="get">
                             <input type="text" name="search">
                             <input type="submit" value="Search">
                         </form>                            
@@ -29,7 +27,6 @@
                 <h6>Trips</h6>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add">Add</button>
-
                 <!-- Modal -->
                 <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">

@@ -36,7 +36,19 @@ class TripsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $trips = new Trips;
+
+        $trips->driver_id = $request->driver;
+        $trips->trips_origin = $request->origin;
+        $trips->trips_destination = $request->destination;
+        $trips->trips_passenger = $request->passengers;
+        $trips->trips_bodynum = $request->linecode;
+        $trips->trips_isArchived = $request->archived;
+
+        $trips->save();
+
+        $trips = Trips::all();
+        return view('trips')->with('trips', $trips);
     }
 
     /**
@@ -70,7 +82,16 @@ class TripsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updatedTrips = Trips::find($id);
+        $updatedTrips->trips_origin = $request->origin;
+        $updatedTrips->trips_destination = $request->destination;
+        $updatedTrips->trips_passenger = $request->passengers;
+        $updatedTrips->trips_bodynum = $request->linecode;
+        $updatedTrips->trips_isArchived = $request->archived;
+        $updatedTrips->fill($request->all());
+        $updatedTrips->save();
+
+        return redirect('trips');
     }
 
     /**
@@ -81,6 +102,17 @@ class TripsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $account = Trips::find($id);
+        $account->delete();
+
+        return redirect('trips');
+    }
+
+    public function search()
+    {
+        $search = $_GET['search'];
+        $data = Trips::where('trips_bodynum', 'LIKE', '%' . $search . '%')->get();
+
+        return view('trips')->with('trips', $data);
     }
 }

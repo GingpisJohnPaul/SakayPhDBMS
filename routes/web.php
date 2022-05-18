@@ -54,7 +54,12 @@ Route::resource('/passenger', App\Http\Controllers\PassengerController::class);
 Route::resource('/driver', App\Http\Controllers\DriverController::class);
 Route::resource('/bookedtrips', App\Http\Controllers\BookedTripsController::class);
 Route::resource('/trips', App\Http\Controllers\TripsController::class);
-Route::get('/search', 'App\Http\Controllers\BookedTripsController@search');
+
+Route::get('/search-bookedtrips', 'App\Http\Controllers\BookedTripsController@search');
+Route::get('/search-trips', 'App\Http\Controllers\TripsController@search');
+Route::get('/search-drivers', 'App\Http\Controllers\DriverController@search');
+Route::get('/search-passengers', 'App\Http\Controllers\PassengerController@search');
+
 
 Auth::routes();
 

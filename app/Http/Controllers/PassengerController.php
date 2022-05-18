@@ -15,7 +15,7 @@ class PassengerController extends Controller
     public function index()
     {
         $passenger = Users::all();
-        return view('passenger')->with('passenger', $passenger);
+        return view('passenger')->with('passengers', $passenger);
     }
 
     /**
@@ -70,7 +70,15 @@ class PassengerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updatedPassenger = Users::find($id);
+        $updatedPassenger->users_name = $request->name;
+        $updatedPassenger->users_uname = $request->username;
+        $updatedPassenger->users_contact = $request->contact;
+        $updatedPassenger->users_address = $request->address;
+        $updatedPassenger->fill($request->all());
+        $updatedPassenger->save();
+
+        return redirect('passenger');
     }
 
     /**
@@ -84,5 +92,13 @@ class PassengerController extends Controller
         $account = Users::find($users_id);
         $account->delete();
         return redirect('/passenger');
+    }
+
+    public function search()
+    {
+        $search = $_GET['search'];
+        $data = Users::where('users_name', 'LIKE', '%' . $search . '%')->get();
+
+        return view('passenger')->with('passengers', $data);
     }
 }
