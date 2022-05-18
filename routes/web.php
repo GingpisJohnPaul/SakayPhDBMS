@@ -54,7 +54,7 @@ Route::resource('/passenger', App\Http\Controllers\PassengerController::class);
 Route::resource('/driver', App\Http\Controllers\DriverController::class);
 Route::resource('/bookedtrips', App\Http\Controllers\BookedTripsController::class);
 Route::resource('/trips', App\Http\Controllers\TripsController::class);
-
+Route::get('/search', 'App\Http\Controllers\BookedTripsController@search');
 
 Auth::routes();
 

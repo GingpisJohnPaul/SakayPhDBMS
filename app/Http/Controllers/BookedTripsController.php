@@ -14,10 +14,37 @@ class BookedTripsController extends Controller
      */
     public function index()
     {
+
+        // $search = BookedTrips::where([
+        //     ['search', '!=', Null],
+        //     [function ($query) use ($request){
+        //         if (($searchcurrent = $request->$searchcurrent)){
+        //             $query->orWhere('reserve_current', 'LIKE', '%' . $searchcurrent . '%')->get();
+        //         }
+        //     }]
+        // ]);
+
+        // $search = BookedTrips::query();
+        // if (request('search')){
+        //     $search->orWhere('reserve_current', 'LIKE', '%' . request('search') . '%');
+        // }
+
         $bookedtrips = BookedTrips::all();
+        // error_log("$search");
         return view('bookedtrips')->with('bookedtrips', $bookedtrips);
+        
+
+        // return $search;
     }
 
+    public function search()
+    {
+        $search = $_GET['search'];
+        $data = BookedTrips::where('reserve_current', 'LIKE', '%' . $search . '%')->get();
+
+        return view('bookedtrips')->with('bookedtrips', $data);
+    }
+    // 'OR', 'reserve_destination', 'OR', 'reserve_description', 'OR', 'reserve_status', 'OR', 'reserve_timestamp',
     /**
      * Show the form for creating a new resource.
      *
@@ -59,7 +86,10 @@ class BookedTripsController extends Controller
      */
     public function show($id)
     {
-        //
+
+        // $post = Post::find($id);
+        // // dd($post);
+        // return view('admin.post.show')->with('post',$post);
     }
 
     /**
@@ -108,4 +138,6 @@ class BookedTripsController extends Controller
 
         return redirect('bookedtrips');
     }
+
+
 }

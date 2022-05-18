@@ -11,11 +11,13 @@
                 <div class="mx-auto pull-right">
                     <div class="">
                         <div class="input-group">
-                        <button class="btn btn-info" type="submit" title="Search projects">
-                        </button>
-                        </span>
-                <input type="text" class="form-control" name="search" placeholder="Search">
-                    </div>
+                        <form action="/search" method="get">
+                            <!-- <input type="text" class="form-control" name="search" id="search" placeholder="Search for a record">
+                            <button class="btn btn-info" type="submit" title="Search projects">Search</button> -->
+                            <input type="text" name="search">
+                            <input type="submit" value="Search">
+                        </form>                            
+                        </div>
                 </form>
                 </div>
                 </div>
@@ -173,8 +175,5 @@
         </div>
     </div>
 </div>
-
-
-
 
 @endsection
