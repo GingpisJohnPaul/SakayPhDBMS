@@ -38,11 +38,15 @@
               <a class="nav-link" href="/trips">Trips</a>
             </li>
             
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
+            <li class="nav-item" >
+             
+              <a class="nav-link" href="/login">LOGIN</a>
+
             </li>
-           
-          </ul>
+
+
+
+           </ul>
         </div>
       </nav>
 
