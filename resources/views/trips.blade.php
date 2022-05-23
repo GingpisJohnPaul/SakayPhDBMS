@@ -31,7 +31,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Add Trip</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -103,10 +103,10 @@
 
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$trip->trips_id}}">Edit</button>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{$trip->trips_id}}">Edit</button>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="{{$trip->trips_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="edit{{$trip->trips_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -149,11 +149,35 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form method="POST" action="/trip/{{$trip->trips_id}}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                    </form>
+
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{$trip->trips_id}}">Delete</button>
+                                    
+                                    <div class="modal fade" id="delete{{$trip->trips_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Trip {{$trip->trips_id}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <form method="POST" action="/trips/{{$trip->trips_id}}">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"> Confirm Password </label>
+                                                            <input type="text" name="password" class="form-control" required>
+                                                        </div>
+                                                </div>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                        </div>
+                                                    </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

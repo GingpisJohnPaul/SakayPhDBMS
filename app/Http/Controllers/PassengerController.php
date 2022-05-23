@@ -87,11 +87,17 @@ class PassengerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($users_id)
+    public function destroy(Request $request, $id)
     {
-        $account = Users::find($users_id);
-        $account->delete();
-        return redirect('/passenger');
+
+        if($request->password == "123"){
+            $account = Users::find($id);
+            $account->delete();
+            return redirect('passenger');
+        }
+        else{
+            return redirect('passenger');
+        }
     }
 
     public function search()

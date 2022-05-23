@@ -131,12 +131,19 @@ class BookedTripsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $account = BookedTrips::find($id);
-        $account->delete();
+        if($request->password == "123"){
+            $account = BookedTrips::find($id);
+            $account->delete();
 
-        return redirect('bookedtrips');
+            return redirect('bookedtrips');
+        }
+        else{
+            return redirect('passenger');
+        }
+        
+        
     }
 
 

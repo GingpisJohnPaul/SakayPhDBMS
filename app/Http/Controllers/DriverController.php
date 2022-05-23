@@ -88,12 +88,20 @@ class DriverController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $account = Driver::find($id);
-        $account->delete();
 
-        return redirect('driver');
+        if($request->password == "123"){
+            $account = Driver::find($id);
+            $account->delete();
+
+            return redirect('driver');
+        }
+        else{
+            return redirect('passenger');
+        }
+
+        
     }
 
     public function search()

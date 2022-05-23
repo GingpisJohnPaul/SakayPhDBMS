@@ -14,8 +14,9 @@ class TripsController extends Controller
      */
     public function index()
     {
+        $password = "123";
         $trips = Trips::all();
-        return view('trips')->with('trips', $trips);
+        return view('trips')->with('trips', $trips, 'password', $password);
     }
 
     /**
@@ -100,12 +101,18 @@ class TripsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $account = Trips::find($id);
-        $account->delete();
+        if($request->password == "123"){
+            $account = Trips::find($id);
+            $account->delete();
+            return redirect('trips');
+        }
+        else{
+            return redirect('trips');
+        }
 
-        return redirect('trips');
+        
     }
 
     public function search()
