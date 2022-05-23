@@ -13,13 +13,13 @@ class CreateDriversTable extends Migration
      */
     public function up()
     {
-        Schema::create('drivers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('username');
-            $table->string('password');
-            $table->integer('contactnum');
-            $table->string('address');
+        Schema::create('driver_tbl', function (Blueprint $table) {
+            $table->id('driver_id');
+            $table->string('driver_name');
+            $table->string('driver_contact');
+            $table->string('driver_uname');
+            $table->string('driver_password');
+            $table->string('driver_address');
             $table->timestamps();
         });
     }

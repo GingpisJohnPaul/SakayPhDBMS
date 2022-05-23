@@ -13,13 +13,13 @@ class CreatePassengersTable extends Migration
      */
     public function up()
     {
-        Schema::create('passengers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('username');
-            $table->string('password');
-            $table->integer('contactnum');
-            $table->string('address');
+        Schema::create('users_tbl', function (Blueprint $table) {
+            $table->id('users_id');
+            $table->string('users_name');
+            $table->string('users_contact');
+            $table->string('users_uname');
+            $table->string('users_password');
+            $table->string('users_address');
             $table->timestamps();
         });
     }

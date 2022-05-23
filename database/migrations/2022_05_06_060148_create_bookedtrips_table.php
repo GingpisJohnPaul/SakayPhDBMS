@@ -13,15 +13,16 @@ class CreateBookedtripsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookedtrips', function (Blueprint $table) {
-            $table->id();
+        Schema::create('reserve_trip_tbl', function (Blueprint $table) {
+            $table->id('reserve_id');
             $table->integer('trips_id');
             $table->integer('users_id');
             $table->string('reserve_current');
             $table->string('reserve_destination');
             $table->string('reserve_description');
             $table->string('reserve_status');
-            $table->timestamps('reserve_timestamp');
+            $table->string('reserve_timestamp');
+            $table->timestamps();
         });
     }
 

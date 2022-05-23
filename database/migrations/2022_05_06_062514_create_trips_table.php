@@ -13,13 +13,14 @@ class CreateTripsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trips', function (Blueprint $table) {
-            $table->id();
-            $table->string('origin');
-            $table->string('destination');
-            $table->integer('numofpassenger');
-            $table->string('linecode');
-            $table->integer('isarchived');
+        Schema::create('trips_tbl', function (Blueprint $table) {
+            $table->id('trips_id');
+            $table->integer('driver_id');
+            $table->string('trips_origin');
+            $table->string('trips_destination');
+            $table->integer('trips_passenger');
+            $table->string('trips_bodynum');
+            $table->integer('trips_isArchived');
             $table->timestamps();
         });
     }
