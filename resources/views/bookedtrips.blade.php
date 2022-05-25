@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('title', 'BookedTrips')
 @section('content')
+<link href="{{ asset('css/bookedtrips.css') }}" rel="stylesheet">
 <div class="p-10 bg-surface-secondary">
     <div class="container">
         <div class="card">
@@ -32,7 +33,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Book Trips</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>

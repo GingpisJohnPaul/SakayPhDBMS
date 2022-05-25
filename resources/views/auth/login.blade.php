@@ -1,11 +1,25 @@
 @extends('layouts.master')
+<<<<<<< Updated upstream
 @section('title', 'Login')
+=======
+<<<<<<< HEAD
+=======
+@section('title', 'Login')
+>>>>>>> 67c3559532dc953570f8a74cf461676821ca0a23
+>>>>>>> Stashed changes
 @section('content')
+<link href="{{ asset('css/login.css') }}" rel="stylesheet">
+
+<div class="header">
+    <h1>Sakay.Ph DBMS</h1>
+    <img src="{{ asset('images/sakaylogo.png') }}" alt="logo" class="logo">
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Welcome kaSakay!') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -69,5 +83,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

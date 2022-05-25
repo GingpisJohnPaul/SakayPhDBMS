@@ -1,0 +1,14 @@
+.nav-item1{
+    font-family:'Sairah', cursive;
+    border-radius: 5px;
+    display: flex;
+    margin-left: 130%;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.nav-item{
+    font-family:'Sairah', cursive;
+    font-size: 20px;
+    
+}

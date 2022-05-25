@@ -1,0 +1,29 @@
+.header {
+    background-color: #BFD7ED;
+    padding: 30px;
+    text-align: center;
+    font-family:'Sairah', cursive;
+}
+
+.logo{
+    display: inline-block;
+    width: 40%;
+    height: 40%;
+    margin-top: -150px;
+    margin-bottom: -150px;
+}
+
+p{
+    font-size: 25px;
+}
+
+.content {
+    text-align:justify;
+    padding: 35px;
+    background-color: #f1f1f1;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+

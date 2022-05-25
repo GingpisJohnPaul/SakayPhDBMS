@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Passenger')
 @section('content')
+<link href="{{ asset('css/passenger.css') }}" rel="stylesheet">
 <div class="p-10 bg-surface-secondary">
     <div class="container">
         <div class="card">

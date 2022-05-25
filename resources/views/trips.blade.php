@@ -1,11 +1,12 @@
 @extends('layouts.master')
 @section('title', 'Trips')
 @section('content')
+<link href="{{ asset('css/trips.css') }}" rel="stylesheet">
 <div class="p-10 bg-surface-secondary">
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h6>trip Trips</h6>
+                <h6>Driver Trips</h6>
                 </div>
                 <div>
                 <div class="mx-auto pull-right">
@@ -19,6 +20,7 @@
                 </div>
                 </div>
                 </div>
+                <br>
     <div class="p-10 bg-surface-secondary">
     <div class="container">
         <div class="card">
