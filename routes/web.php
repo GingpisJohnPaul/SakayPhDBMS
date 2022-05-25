@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\TripsController;
@@ -22,10 +22,10 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('/home');
+    return view('auth.login');
 });
 Route::get('/home', [HomeController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index']);
+// Route::get('/login', [LoginController::class, 'index']);
 Route::get('/passenger', [PassengerController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/trips', [TripsController::class, 'index']);
