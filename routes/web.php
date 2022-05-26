@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('home');
 });
 Route::get('/home', [HomeController::class, 'index']);
 // Route::get('/login', [LoginController::class, 'index']);
