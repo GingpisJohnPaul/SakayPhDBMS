@@ -3,19 +3,84 @@
 @section('content')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
-<div class="header">
-  
+{{--<div class="header">
+  <h1>Welcome to Sakay.Ph</h1>
+    <p>Database Management System</p>
+    <img src="{{ asset('images/sakaylogo.png') }}" alt="logo" class="logo">
+   </div>--}}
+
+   <div class="header">
     <h1>Welcome to Sakay.Ph</h1>
     <p>Database Management System</p>
     <img src="{{ asset('images/sakaylogo.png') }}" alt="logo" class="logo">
-   
-</div>
+    </div>
 
-<div class="content">
-    <h2>What is Sakay.Ph DBMS?</h2>
-    <p>Sakay.Ph DBMS allows passengers and drivers to create,read,update, and delete data in the database.DBMS manage the data, the database engine, and the database schema, 
-       allowing for data to be manipulated or extracted by users and other programs. Securing the data is easy. The administrator can
-       restrict the usage of the database to a few people only. 
-    </p>
-</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Number of Passenger</h5>
+                        {{--<p class="card-text">{{$total}}</p>--}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Number of Driver</h5>
+                        {{--<p class="card-text">{{$total}}</p>--}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Number of Trips</h5>
+                        {{--<p class="card-text">{{$total}}</p>--}}
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+            
+                    
+
+
+                            
+     
+
+
+
+
+  
+
+
+
+
+   
+
+
+
+
+
+
+
+
+         
+            
+        
+
+            
+            
+
+
+
+
+
 @endsection

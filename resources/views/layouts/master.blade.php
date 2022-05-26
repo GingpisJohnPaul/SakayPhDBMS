@@ -39,11 +39,7 @@
               <a class="nav-link" href="/trips">Trips</a>
             </li>
             
-            <li class="nav-item1" >
-             
-              <a class="nav-link" href="/login">LOGIN</a>
-
-            </li>
+           
 
 
 

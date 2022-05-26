@@ -62,9 +62,11 @@
                             <input type="text" name="linecode" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label"> Archived? </label>
-                            <input type="text" name="archived" class="form-control">
-                        </div>
+                            <label class="form-label">Archived?</label>
+                            <select name="archived">
+                                <option value="Approved">Yes</option>
+                                <option value="Pending">No</option>
+                            </select>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-success">Add</button>
@@ -81,7 +83,7 @@
                     <thead class="table-light">
                         <tr>
                             <th scope="col">Trip</th>
-                            <th scope="col">Driver</th>
+                            <th scope="col">Driver Name</th>
                             <th scope="col">Origin</th>
                             <th scope="col">Destination</th>
                             <th scope="col">Number of Passenger</th>
@@ -189,6 +191,38 @@
         </div>
     </div>
 </div>
+<br>
+
+<div class="p-10 bg-surface-secondary">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <a href="/passenger">Passenger Logs</a>
+                <div class="table-responsive">
+                    <table class="table table-hover table-nowrap">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">Address</th>
+                             </tr>
+                        </thead>
+
+                        
+
+
+    {{-- <div class="table-responsive"> 
+      <tbody>
+            @foreach($passengers as $passenger)
+            <tr>
+                <td>{{$passenger->passengers_id}}</td>
+                <td>{{$passenger->passengers_name}}</td>
+                <td>{{$passenger->passengers_contact}}</td>
+                <td>{{$passenger->passengers_address}}</td>
+            </tr>
+            @endforeach
+        </tbody>--}}
 
 
     
