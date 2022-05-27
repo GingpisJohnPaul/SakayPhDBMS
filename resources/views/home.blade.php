@@ -19,9 +19,9 @@
             <option value="lastweek">Last 7 Days</option>
             <option value="lastmonth">Last 30 Days</option>
         </select>
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-primary">Filter</button>
     </form>
-<div class="card">
+
     <div class="card-body">
         <div class="dashboard">
         <div class="row">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+      
 
             
 

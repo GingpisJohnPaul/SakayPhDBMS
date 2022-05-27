@@ -10,32 +10,35 @@
                 </div>
                 <div>
                 <div class="mx-auto pull-right">
-                    <div class="input-group">
-                        <form action="/search-trips" method="get">
+                   <form action="/search-trips" method="get">
                             <input type="text" name="search">
                             <input type="submit" value="Search">
                         </form>                            
-                    </div>
-                </form>
+                    
+               <div class="filter">
                 <form action="/trips/date" method="get">
                     <select name="date">
                         <option value="today">Today</option>
                         <option value="lastweek">Last 7 Days</option>
                         <option value="lastmonth">Last 30 Days</option>
                     </select>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn1">Filter</button>
                 </form>
+            </div>
                 </div>
                 </div>
                 </div>
+            </div>
                 <br>
     <div class="p-10 bg-surface-secondary">
-    <div class="container">
+   <div class="container">
         <div class="card">
             <div class="card-header">
                 <h6>Trips</h6>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add">Add</button>
+                <button type="button" class="btn2" data-toggle="modal" data-target="#add">Add</button>
+                <br>
+                <br>
                 <!-- Modal -->
                 <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -84,8 +87,7 @@
                     </div>
                 </div>
                 </div>
-
-            </div>
+                </div>
             <div class="table-responsive">
                 <table class="table table-hover table-nowrap">
                     <thead class="table-light">
@@ -316,36 +318,7 @@
         </div>
 
 
-<!-- <div class="p-10 bg-surface-secondary">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <a href="/passenger">Passenger Logs</a>
-                <div class="table-responsive">
-                    <table class="table table-hover table-nowrap">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Contact Number</th>
-                                <th scope="col">Address</th>
-                             </tr>
-                        </thead>
 
-                        
-
-
-    {{-- <div class="table-responsive"> 
-      <tbody>
-            @foreach($passengers as $passenger)
-            <tr>
-                <td>{{$passenger->passengers_id}}</td>
-                <td>{{$passenger->passengers_name}}</td>
-                <td>{{$passenger->passengers_contact}}</td>
-                <td>{{$passenger->passengers_address}}</td>
-            </tr>
-            @endforeach
-        </tbody>--}} -->
 
 
     

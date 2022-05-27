@@ -3,23 +3,24 @@
 @section('content')
 <link href="{{ asset('css/driver.css') }}" rel="stylesheet">
 <div class="p-10 bg-surface-secondary">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h6>Driver</h6>
-                </div>
-                <div>
-                <div class="mx-auto pull-right">
-                    <div class="input-group">
-                        <form action="/search-drivers" method="get">
-                            <input type="text" name="search">
-                            <input type="submit" value="Search">
-                        </form>                            
+    <div class="p-10 bg-surface-secondary">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h6>Driver</h6>
                     </div>
-                </form>
-                </div>
-                </div>
-                </div>
+                    <div>
+                        <div class="mx-auto pull-right">
+                            <div class="">
+                                <div class="input-group">
+                                    <form action="/search-passengers" method="get">
+                                        <input type="text" name="search">
+                                        <input type="submit" value="Search">
+                                    </form> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
             <div class="table-responsive">
                 <table class="table table-hover table-nowrap">
@@ -134,17 +135,9 @@
         <div class="card">
             <div class="card-header">
                 <h6>Trip Logs</h6>
-                 <form>
-            <select name="filterdate" id="timestamp">
-            <option></option>
-           {{--  @foreach ($timestamps as $timestamp) 
-               <option value="{{$staffMember->smsstaff_key}}" {{request()->input('smsstaff_key') === $staffMember->smsstaff_key ? 'selected="selected"' : ''}}>{{$staffMember->name}}</option>
-                @endforeach --}}
-                <input type="date" class="form-control" name="startDate">
-                </select>
-            <button>Filter by date</button>
-            </form>
-                <div class="table-responsive">
+            </div>
+            <br>
+              <div class="table-responsive">
                     <table class="table table-hover table-nowrap">
                         <thead class="table-light">
                             <tr>
