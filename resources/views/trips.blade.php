@@ -64,8 +64,8 @@
                         <div class="mb-3">
                             <label class="form-label">Archived?</label>
                             <select name="archived">
-                                <option value="Approved">Yes</option>
-                                <option value="Pending">No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
                             </select>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -98,7 +98,7 @@
                         @foreach ($trips as $trip)
                             <tr>
                                 <td>{{$trip->trips_id}}</td>
-                                <td>{{$trip->driver_id}}</td>
+                                <td>{{$trip->driver_name}}</td>
                                 <td>{{$trip->trips_origin}}</td>
                                 <td>{{$trip->trips_destination}}</td>
                                 <td><a href="/passenger/trip/{{$trip->trips_id}}">{{$trip->trips_passenger}}</a></td>
@@ -213,7 +213,7 @@
                     @foreach ($archivedtrips as $archivedtrip)
                         <tr>
                             <td>{{$archivedtrip->trips_id}}</td>
-                            <td>{{$archivedtrip->driver_id}}</td>
+                            <td>{{$archivedtrip->driver_name}}</td>
                             <td>{{$archivedtrip->trips_origin}}</td>
                             <td>{{$archivedtrip->trips_destination}}</td>
                             <td><a href="/passenger/trip/{{$archivedtrip->trips_id}}">{{$archivedtrip->trips_passenger}}</a></td>
