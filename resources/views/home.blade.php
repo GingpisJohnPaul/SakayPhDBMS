@@ -15,6 +15,14 @@
     <img src="{{ asset('images/sakaylogo.png') }}" alt="logo" class="logo">
     </div>
 
+    <form action="/home/date" method="get">
+        <select name="date">
+            <option value="today">Today</option>
+            <option value="lastweek">Last 7 Days</option>
+            <option value="lastmonth">Last 30 Days</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
 <div class="card">
     <div class="card-body">
         <div class="row">
@@ -22,7 +30,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Total Number of Passenger</h5>
-                        {{--<p class="card-text">{{$total}}</p>--}}
+                        <p class="card-text">{{$totalPassenger}}</p>
                     </div>
                 </div>
             </div>
@@ -31,7 +39,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Total Number of Driver</h5>
-                        {{--<p class="card-text">{{$total}}</p>--}}
+                        <p class="card-text">{{$totalDriver}}</p>
                     </div>
                 </div>
             </div>
@@ -40,7 +48,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Total Number of Trips</h5>
-                        {{--<p class="card-text">{{$total}}</p>--}}
+                        <p class="card-text">{{$totalTrips}}</p>
                     </div>
                 </div>
             </div>

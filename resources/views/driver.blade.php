@@ -30,11 +30,6 @@
                             <th scope="col">Contact Number</th>
                             <th scope="col">Username</th>
                             <th scope="col">Address</th>
-                            <!-- 
-                            <th scope="col">Password</th>
-                            
-                            
-                            <th scope="col">Action</th> -->
                         </tr>
                     </thead>
 
@@ -48,6 +43,8 @@
                             <td>{{$driver->driver_address}}</td>
 
                             <td>
+                                <a href="/trips/driver/{{$driver->driver_id}}"><button type="button" class="btn btn-primary">History</button></a>
+
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$driver->driver_id}}">Edit</button>
 

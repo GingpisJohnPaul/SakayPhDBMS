@@ -17,6 +17,14 @@
                         </form>                            
                     </div>
                 </form>
+                <form action="/trips/date" method="get">
+                    <select name="date">
+                        <option value="today">Today</option>
+                        <option value="lastweek">Last 7 Days</option>
+                        <option value="lastmonth">Last 30 Days</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
                 </div>
                 </div>
                 </div>

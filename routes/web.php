@@ -22,13 +22,15 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('home');
 });
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home/date', [HomeController::class, 'searchdate']);
 // Route::get('/login', [LoginController::class, 'index']);
 // Route::get('/passenger/list', [PassengerController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/trips', [TripsController::class, 'index']);
+Route::get('/trips/date', [TripsController::class, 'searchdate']);
 Route::get('/bookedtrips', [BookedTripsController::class, 'index']);
 // Route::get('/driver', [TripsController::class, 'index']);
 
@@ -59,6 +61,11 @@ Route::prefix('passenger')->group(function(){
 Route::resource('/driver', App\Http\Controllers\DriverController::class);
 Route::resource('/bookedtrips', App\Http\Controllers\BookedTripsController::class);
 Route::resource('/trips', App\Http\Controllers\TripsController::class);
+
+Route::prefix('trips')->group(function(){
+    Route::get('/driver/{id}', [TripsController::class, 'driverTrip']);
+    Route::resource('/list', App\Http\Controllers\TripsController::class);
+});
 
 Route::get('/search-bookedtrips', 'App\Http\Controllers\BookedTripsController@search');
 Route::get('/search-trips', 'App\Http\Controllers\TripsController@search');

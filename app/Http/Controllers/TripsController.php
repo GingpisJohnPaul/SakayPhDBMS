@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Trips;
+use App\Models\Driver;
+use Carbon\Carbon;
 
 class TripsController extends Controller
 {
@@ -14,6 +16,7 @@ class TripsController extends Controller
      */
     public function index()
     {
+        session(['driver_id' => '0']);
         $password = "123";
         $trips = Trips::join('driver_tbl', 'trips_tbl.driver_id', '=', 'driver_tbl.driver_id')
                     ->where('trips_tbl.trips_isArchived', '=', 'No')
@@ -124,5 +127,61 @@ class TripsController extends Controller
         $data = Trips::where('trips_bodynum', 'LIKE', '%' . $search . '%')->get();
 
         return view('trips')->with('trips', $data);
+    }
+
+    public function driverTrip($id)
+    {
+        $password = "123";
+        $trips = Trips::join('driver_tbl', 'trips_tbl.driver_id', '=', 'driver_tbl.driver_id')
+                    ->where('trips_tbl.trips_isArchived', '=', 'No')
+                    ->where('trips_tbl.driver_id', '=', $id)
+                    ->get(['driver_tbl.driver_name', 'trips_tbl.*']);
+        $archivedtrips = Trips::join('driver_tbl', 'trips_tbl.driver_id', '=', 'driver_tbl.driver_id')
+                    ->where('trips_tbl.trips_isArchived', '=', 'Yes')
+                    ->where('trips_tbl.driver_id', '=', $id)
+                    ->get(['driver_tbl.driver_name', 'trips_tbl.*']);
+        
+        session(['driver_id' => $id]);
+        return view('trips', compact('archivedtrips', 'trips', 'password'));
+    }
+
+    public function searchdate()
+    {
+        $driver_id = session()->get('driver_id');
+        $date = $_GET['date'];
+
+        if ($date == 'today') {
+            $date = Carbon::now()->toDateString();
+        } elseif ($date == 'lastweek') {
+            $date = Carbon::now()->subWeek(7)->toDateString();
+        }elseif ($date == 'lastmonth') {
+            $date = Carbon::now()->subMonth(30)->toDateString();
+        }
+
+        $password = "123";
+
+        if (session()->get('driver_id') == '0') {
+            $trips = Trips::join('driver_tbl', 'trips_tbl.driver_id', '=', 'driver_tbl.driver_id')
+                    ->where('trips_tbl.trips_isArchived', '=', 'No')
+                    ->whereDate('trips_tbl.created_at','>=',$date)
+                    ->get(['driver_tbl.driver_name', 'trips_tbl.*']);
+            $archivedtrips = Trips::join('driver_tbl', 'trips_tbl.driver_id', '=', 'driver_tbl.driver_id')
+                    ->where('trips_tbl.trips_isArchived', '=', 'Yes')
+                    ->whereDate('trips_tbl.created_at','>=',$date)
+                    ->get(['driver_tbl.driver_name', 'trips_tbl.*']);
+        }else{
+            $trips = Trips::join('driver_tbl', 'trips_tbl.driver_id', '=', 'driver_tbl.driver_id')
+                    ->where('trips_tbl.trips_isArchived', '=', 'No')
+                    ->whereDate('trips_tbl.created_at','>=',$date)
+                    ->where('trips_tbl.driver_id', '=', $driver_id)
+                    ->get(['driver_tbl.driver_name', 'trips_tbl.*']);
+            $archivedtrips = Trips::join('driver_tbl', 'trips_tbl.driver_id', '=', 'driver_tbl.driver_id')
+                    ->where('trips_tbl.trips_isArchived', '=', 'Yes')
+                    ->whereDate('trips_tbl.created_at','>=',$date)
+                    ->where('trips_tbl.driver_id', '=', $driver_id)
+                    ->get(['driver_tbl.driver_name', 'trips_tbl.*']);
+        }
+    
+        return view('trips', compact('archivedtrips', 'trips', 'password'));
     }
 }
