@@ -107,4 +107,10 @@ class PassengerController extends Controller
 
         return view('passenger')->with('passengers', $data);
     }
+
+    public function passengerTrip($id)
+    {
+        $passengerFromTrips = Users::where('trips_id', '=', $id)->get();
+        return view('passenger')->with('passengers', $passengerFromTrips);
+    }
 }

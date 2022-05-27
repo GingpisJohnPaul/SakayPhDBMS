@@ -15,8 +15,9 @@ class TripsController extends Controller
     public function index()
     {
         $password = "123";
-        $trips = Trips::all();
-        return view('trips')->with('trips', $trips, 'password', $password);
+        $trips = Trips::where('trips_isArchived', '=', 'No')->get();
+        $archivedtrips = Trips::where('trips_isArchived', '=', 'Yes')->get();
+        return view('trips', compact('archivedtrips', 'trips', 'password'));
     }
 
     /**

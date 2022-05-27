@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 Route::get('/home', [HomeController::class, 'index']);
 // Route::get('/login', [LoginController::class, 'index']);
-Route::get('/passenger', [PassengerController::class, 'index']);
+// Route::get('/passenger/list', [PassengerController::class, 'index']);
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/trips', [TripsController::class, 'index']);
 Route::get('/bookedtrips', [BookedTripsController::class, 'index']);
@@ -51,6 +51,11 @@ Route::get('/bookedtrips', [BookedTripsController::class, 'index']);
 // Route::resource('trips', TripsController::class);
 // Route::resource('driver', DriverController::class);
 Route::resource('/passenger', App\Http\Controllers\PassengerController::class);
+
+Route::prefix('passenger')->group(function(){
+        Route::get('/trip/{id}', [PassengerController::class, 'passengerTrip']);
+        Route::resource('/list', App\Http\Controllers\PassengerController::class);
+    });
 Route::resource('/driver', App\Http\Controllers\DriverController::class);
 Route::resource('/bookedtrips', App\Http\Controllers\BookedTripsController::class);
 Route::resource('/trips', App\Http\Controllers\TripsController::class);
