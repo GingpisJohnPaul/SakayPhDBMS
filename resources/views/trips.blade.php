@@ -15,7 +15,7 @@
                             <input type="submit" value="Search">
                         </form>                            
                     
-               <div class="filter">
+               <div class="filter" >
                 <form action="/trips/date" method="get">
                     <select name="date">
                         <option value="today">Today</option>

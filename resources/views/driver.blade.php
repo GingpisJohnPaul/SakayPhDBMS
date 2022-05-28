@@ -129,39 +129,5 @@
 
     </div>
 </div>
-<br>
-<div class="p-10 bg-surface-secondary">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h6>Trip Logs</h6>
-            </div>
-            <br>
-              <div class="table-responsive">
-                    <table class="table table-hover table-nowrap">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col">Trip ID</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Current Location</th>
-                                <th scope="col">Destination</th>
-                                <th scope="col">Timestamp</th>
-                            </tr>
-                        </thead>
-                        
-                     {{--   <tbody>
-                            @foreach ($trips as $trip)
-                            <tr>
-                                <td>{{$trip->trip_id}}</td>
-                                <td>{{$trip->trip_name}}</td>
-                                <td>{{$trip->current_location}}</td>
-                                <td>{{$trip->destination}}</td>
-                                <td>{{$trip->timestamp}}</td>
-                            </tr>
-                            @endforeach --}}
-
-
-
-
-    
+<br>    
 @endsection
