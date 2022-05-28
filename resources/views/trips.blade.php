@@ -2,38 +2,33 @@
 @section('title', 'Trips')
 @section('content')
 <link href="{{ asset('css/trips.css') }}" rel="stylesheet">
+<br>
 <div class="p-10 bg-surface-secondary">
     <div class="container">
         <div class="card">
             <div class="card-header">
                 <h6>Driver Trips</h6>
-                </div>
-                <div>
-                <div class="mx-auto pull-right">
-                   <form action="/search-trips" method="get">
+            </div>
+            <div class="filter" >
+                    <div class="mx-auto pull-right">
+                        <form action="/search-trips" method="get">
                             <input type="text" name="search">
                             <input type="submit" value="Search">
-                        </form>                            
-                    
-               <div class="filter" >
-                <form action="/trips/date" method="get">
-                    <select name="date">
-                        <option value="today">Today</option>
-                        <option value="lastweek">Last 7 Days</option>
-                        <option value="lastmonth">Last 30 Days</option>
-                    </select>
-                    <button type="submit" class="btn1">Filter</button>
-                </form>
-            </div>
+                        </form> 
+                    </div>   
+                    <form action="/trips/date" class="mx-auto pull-right" method="get">
+                        <select name="date">
+                            <option value="today">Today</option>
+                            <option value="lastweek">Last 7 Days</option>
+                            <option value="lastmonth">Last 30 Days</option>
+                        </select>
+                        <button type="submit" class="btn1">Filter</button>
+                    </form>
                 </div>
-                </div>
-                <br>
-                
+            <br>  
    
   
             <div class="card-content">
-              
-           
                 <!-- Button trigger modal -->
                 <button type="button" class="btn2" data-toggle="modal" data-target="#add">Add</button>
                 <br>
@@ -213,7 +208,7 @@
     <div class="container">
          <div class="card">
              <div class="card-header">
-                 <h6>Logs</h6>
+                 <h6>Archived Trips</h6>
                 </div>
         <div class="table-responsive">
             <table class="table table-hover table-nowrap">
