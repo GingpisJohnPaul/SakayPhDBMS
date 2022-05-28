@@ -14,7 +14,7 @@
 .btn2{
     background-color: rgb(240, 240, 240);
     font-size: large;
-    margin-left: 90%;
+    
     width: 7%;
 }
 
@@ -24,17 +24,16 @@
 }
 
 .card{
-   background-color: rgba(110, 196, 236, 0.7);
+   background-color: rgba(6, 79, 214, 0.7);
    color: white;
 }
 
 h6{
+   
     font-size: 20px;
     font-weight: bold;
 }
 
-.card-header{
-    background-color: rgb(89, 124, 241);
-}
+
 
 

@@ -27,14 +27,13 @@
             </div>
                 </div>
                 </div>
-                </div>
-            </div>
                 <br>
-    <div class="p-10 bg-surface-secondary">
-   <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h6>Trips</h6>
+                
+   
+  
+            <div class="card-content">
+              
+           
                 <!-- Button trigger modal -->
                 <button type="button" class="btn2" data-toggle="modal" data-target="#add">Add</button>
                 <br>
@@ -88,7 +87,8 @@
                 </div>
                 </div>
                 </div>
-            <div class="table-responsive">
+            </div>
+              <div class="table-responsive">
                 <table class="table table-hover table-nowrap">
                     <thead class="table-light">
                         <tr>
@@ -204,7 +204,17 @@
         </div>
     </div>
 </div>
+
+
+
 <br>
+<br>
+<div class="p-10 bg-surface-secondary">
+    <div class="container">
+         <div class="card">
+             <div class="card-header">
+                 <h6>Logs</h6>
+                </div>
         <div class="table-responsive">
             <table class="table table-hover table-nowrap">
                 <thead class="table-light">
